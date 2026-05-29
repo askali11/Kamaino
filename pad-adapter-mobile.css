@@ -1,0 +1,103 @@
+/* Mobile Pad Adapter - Responsive CSS */
+
+/* Base Container */
+.pad-adapter {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .pad-adapter {
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pad-adapter {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+}
+
+/* Pad Items */
+.pad-item {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.pad-item:active,
+.pad-item:focus {
+  background-color: #e8e8e8;
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Grid Layout */
+@media (max-width: 768px) {
+  .pad-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pad-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.4rem;
+  }
+}
+
+/* Touchscreen Optimization */
+@media (hover: none) and (pointer: coarse) {
+  .pad-item {
+    padding: 0.75rem;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pad-item:active {
+    opacity: 0.8;
+  }
+}
+
+/* Text Sizing for Mobile */
+@media (max-width: 768px) {
+  .pad-item {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pad-item {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+}
+
+/* Accessibility */
+.pad-item:focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+/* Landscape Orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .pad-adapter {
+    padding: 0.5rem;
+  }
+
+  .pad-item {
+    padding: 0.5rem;
+  }
+}
